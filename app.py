@@ -3,12 +3,23 @@
 from fastapi import FastAPI, HTTPException
 import requests
 import base64
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"], 
+    allow_headers=["*"],  
+)
+
+
 # Spotify API credentials
-SPOTIFY_CLIENT_ID = 'SPOTIFY_CLIENT_ID'
-SPOTIFY_CLIENT_SECRET = 'SPOTIFY_CLIENT_SECRET'
+SPOTIFY_CLIENT_ID = 'id'
+SPOTIFY_CLIENT_SECRET = 'secret'
 
 @app.get("/search/{track_name}")
 def search_track_by_name(track_name: str):
