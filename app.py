@@ -83,3 +83,7 @@ def search_spotify_track_by_isrc(isrc, token):
         if search_results:
             return search_results[0]
     return None
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app:app", reload=True)

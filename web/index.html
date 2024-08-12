@@ -6,7 +6,7 @@
     <title>Platformer</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="background">
     <div class="container">
       <h1>Platformer</h1>
       <div class="search-box">
@@ -27,8 +27,12 @@
         <p><strong>Album Type:</strong> <span id="albumType"></span></p>
         <p><strong>Artists:</strong> <span id="artists"></span></p>
         <p><strong>Track ID:</strong> <span id="trackId"></span></p>
-        <button onclick="copyToClipboard()">Copy Spotify URI</button>
-        <button onclick="openOnSpotify()">Open on Spotify</button>
+        <button class="button" onclick="copyToClipboard()">
+          Copy Spotify URI
+        </button>
+        <button class="button" onclick="openOnSpotify()">
+          Open on Spotify
+        </button>
         <p><strong>Release Date:</strong> <span id="releaseDate"></span></p>
         <p><strong>ISRC:</strong> <span id="isrc"></span></p>
         <p><strong>Explicit:</strong> <span id="explicit"></span></p>
