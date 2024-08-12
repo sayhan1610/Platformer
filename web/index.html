@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Platformer</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
   </head>
   <body class="background">
     <div class="container">
@@ -22,7 +23,12 @@
         <button onclick="searchTrack()">Search</button>
       </div>
       <div id="trackInfo" class="track-info hidden">
-        <img id="albumCover" class="album-cover" alt="Album Cover" />
+        <img
+          id="albumCover"
+          class="album-cover"
+          alt="Album Cover"
+          crossorigin="anonymous"
+        />
         <h2 id="trackTitle">Track Name</h2>
         <p><strong>Album Type:</strong> <span id="albumType"></span></p>
         <p><strong>Artists:</strong> <span id="artists"></span></p>
@@ -33,14 +39,19 @@
         <button class="button" onclick="openOnSpotify()">
           Open on Spotify
         </button>
+        <div class="audio-player">
+          <button id="playButton" onclick="togglePlay()">▶</button>
+          <audio id="previewAudio">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
         <p><strong>Release Date:</strong> <span id="releaseDate"></span></p>
         <p><strong>ISRC:</strong> <span id="isrc"></span></p>
         <p><strong>Explicit:</strong> <span id="explicit"></span></p>
         <p><strong>Duration:</strong> <span id="duration"></span></p>
-        <p><strong>Popularity:</strong> <span id="popularity"></span></p>
-        <audio id="previewAudio" controls>
-          Your browser does not support the audio element.
-        </audio>
+        <p style="display: none">
+          <strong>Popularity:</strong> <span id="popularity"></span>
+        </p>
       </div>
     </div>
 
