@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException
 import requests
 import base64
 from fastapi.middleware.cors import CORSMiddleware
-
+import os
 app = FastAPI()
 
 
@@ -18,8 +18,8 @@ app.add_middleware(
 
 
 # Spotify API credentials
-SPOTIFY_CLIENT_ID = 'id'
-SPOTIFY_CLIENT_SECRET = 'secret'
+SPOTIFY_CLIENT_ID = os.environ.get('SPOTIFY_CLIENT_ID')
+SPOTIFY_CLIENT_SECRET = os.environ.get('SPOTIFY_CLIENT_SECRET')
 
 @app.get("/search/{track_name}")
 def search_track_by_name(track_name: str):
@@ -86,4 +86,8 @@ def search_spotify_track_by_isrc(isrc, token):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("app:app", reload=True)
+
+
+    port = int(os.getenv("PORT", 8000))
+
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
