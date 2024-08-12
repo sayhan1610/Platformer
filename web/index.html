@@ -3,25 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spotify Track Search</title>
+    <title>Platformer</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Spotify Track Search</h1>
-
+      <h1>Platformer</h1>
       <div class="search-box">
+        <select id="searchType">
+          <option value="name">Track Name</option>
+          <option value="isrc">ISRC</option>
+        </select>
         <input
           type="text"
           id="searchInput"
           placeholder="Enter track name or ISRC"
         />
-        <button id="searchButton">Search</button>
+        <button onclick="searchTrack()">Search</button>
       </div>
-
-      <div id="results" class="results"></div>
+      <div id="trackInfo" class="track-info hidden">
+        <img id="albumCover" class="album-cover" alt="Album Cover" />
+        <h2 id="trackTitle">Track Name</h2>
+        <p><strong>Album Type:</strong> <span id="albumType"></span></p>
+        <p><strong>Artists:</strong> <span id="artists"></span></p>
+        <p><strong>Track ID:</strong> <span id="trackId"></span></p>
+        <button onclick="copyToClipboard()">Copy Spotify URI</button>
+        <button onclick="openOnSpotify()">Open on Spotify</button>
+        <p><strong>Release Date:</strong> <span id="releaseDate"></span></p>
+        <p><strong>ISRC:</strong> <span id="isrc"></span></p>
+        <p><strong>Explicit:</strong> <span id="explicit"></span></p>
+        <p><strong>Duration:</strong> <span id="duration"></span></p>
+        <p><strong>Popularity:</strong> <span id="popularity"></span></p>
+        <audio id="previewAudio" controls>
+          Your browser does not support the audio element.
+        </audio>
+      </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
