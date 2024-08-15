@@ -1,5 +1,7 @@
 # Platformer - Spotify Track Search Application
 
+# [Website](https://platformerweb.netlify.app/)
+
 ## Overview
 
 Platformer is a web application that allows users to search for Spotify tracks by either track name or ISRC (International Standard Recording Code). The app leverages the Spotify API to retrieve track information, including album details, artists, duration, and more. The interface is built to be dynamic and visually appealing, with features such as color themes that adapt based on the album cover art.
